@@ -16,14 +16,25 @@ public class T3_GoogleSearch {
         driver.manage().window().maximize();
 
         //2- Go to: https://google.com
-        driver.get("https://google.com");//or we can use .navigate to()
+        driver.get("http://google.com");//or we can use .navigate to()
+
+        WebElement agreeButton=driver.findElement(By.id("L2AGLb"));
+        agreeButton.click();
 
         //3- Write “apple” in search box
-        WebElement googleSearchBox=driver.findElement(By.name("q"));
-        googleSearchBox.sendKeys("apple" + Keys.ENTER);
+        //4- PRESS ENTER USING KEYS.ENTER
+          WebElement googleSearchBox=driver.findElement(By.name("q"));
+          googleSearchBox.sendKeys("apple" + Keys.ENTER);
 
-       // 4- Click google search button
         //5- Verify title:
-        //Expected: Title should start with “apple” wor
+        //Expected: Title should start with “apple” word
+        String expectedInTitle="apple";
+        String actualInTitle=driver.getTitle();
+
+        if (actualInTitle.startsWith(expectedInTitle)){
+            System.out.println("Facebook - Log In or Sign Up");
+        }else {
+            System.out.println("title verification failed");
+        }
     }
 }

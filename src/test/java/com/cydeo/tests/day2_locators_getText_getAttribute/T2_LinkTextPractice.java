@@ -6,7 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class Task2LinkTextPractice {
+public class T2_LinkTextPractice {
     public static void main(String[] args) {
        // TC #2: Back and forth navigation
        // 1- Open a chrome browser
